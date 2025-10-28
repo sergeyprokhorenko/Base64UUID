@@ -95,4 +95,4 @@ This encoding does not introduce additional security considerations beyond those
 
 The idea for this encoding belongs to Jelte Fennema-Nio, who proposed it for UUID under the name "base64urlhex".
 
-The alphabet was chosen and the original text was composed by Sergey Prokhorenko with the assistance of DeepSeek.
+The alphabet was chosen and the original text was composed by Sergey Prokhorenko with the assistance of DeepSeek and Perplexity.
