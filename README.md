@@ -82,7 +82,7 @@ The encoding is compatible with major file systems including Windows, Linux, And
 
 The alphabet supports complete text selection in popular SQL development environments:
 - Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
-- Partial support (selection breaks at $ character): Notepad++, VS Code, SQL Server Management Studio.
+- Partial support (selection breaks at `$` character): Notepad++, VS Code, SQL Server Management Studio.
 
 ## 5. Security Considerations
 
