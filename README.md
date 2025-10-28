@@ -62,6 +62,8 @@ To decode a Base64UUID string:
 | 00000000-0000-0000-0000-000000000000     | $$$$$$$$$$$$$$$$$$$$$$    |
 | ffffffff-ffff-ffff-ffff-ffffffffffff      | zzzzzzzzzzzzzzzzzzzzzk    |
 
+Note: The final character encodes the last 2 bits of the UUID (padded with 4 zeros).
+
 ## 4. Properties
 
 ### 4.1. Sort Preservation
@@ -80,7 +82,7 @@ The encoding is compatible with major file systems including Windows, Linux, And
 
 The alphabet supports complete text selection in popular SQL development environments:
 - Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
-- Partial support: Notepad++, VS Code, SQL Server Management Studio — `$` character breaks word selection.
+- Partial support (selection breaks at $ character): Notepad++, VS Code, SQL Server Management Studio.
 
 ## 5. Security Considerations
 
