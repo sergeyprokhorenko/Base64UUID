@@ -17,23 +17,22 @@ The 64-character alphabet SHALL be:
 
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
-     0 $           16 G           32 W           48 k
-     1 0           17 H           33 X           49 l
-     2 1           18 I           34 Y           50 m
-     3 2           19 J           35 Z           51 n
-     4 3           20 K           36 _           52 o
-     5 4           21 L           37 a           53 p
-     6 5           22 M           38 b           54 q
-     7 6           23 N           39 c           55 r
-     8 7           24 O           40 d           56 s
-     9 8           25 P           41 e           57 t
-    10 9           26 Q           42 f           58 u
-    11 A           27 R           43 g           59 v
-    12 B           28 S           44 h           60 w
-    13 C           29 T           45 i           61 x
-    14 D           30 U           46 j           62 y
-    15 E           31 V           47 k           63 z
-    16 F           32 W           48 l
+     0 $           16 F           32 V           48 k
+     1 0           17 G           33 W           49 l
+     2 1           18 H           34 X           50 m
+     3 2           19 I           35 Y           51 n
+     4 3           20 J           36 Z           52 o
+     5 4           21 K           37 _           53 p
+     6 5           22 L           38 a           54 q
+     7 6           23 M           39 b           55 r
+     8 7           24 N           40 c           56 s
+     9 8           25 O           41 d           57 t
+    10 9           26 P           42 e           58 u
+    11 A           27 Q           43 f           59 v
+    12 B           28 R           44 g           60 w
+    13 C           29 S           45 h           61 x
+    14 D           30 T           46 i           62 y
+    15 E           31 U           47 j           63 z
 ```
 
 ### 2.2. Encoding Process
@@ -79,21 +78,9 @@ The encoding is compatible with major file systems including Windows, Linux, And
 
 ### 4.4. Text Selection
 
-The alphabet supports complete text selection on double-click in SQL development environments:
-
-**Fully Supported SQL Environments:**
-- DBeaver (version 24.1+) - full string selection
-- DataGrip (2024.1+) - full string selection  
-- Azure Data Studio (1.48+) - full string selection
-- Google BigQuery Console - full string selection
-- Snowflake Web Interface - full string selection
-
-**Partial Support (with limitations):**
-- Notepad++ (8.6+) - `$` character breaks word selection in SQL context
-- Visual Studio Code - `$` character breaks word selection in SQL files
-- SQL Server Management Studio - `$` character breaks word selection
-
-In supported environments, both `_` and `$` are treated as word characters, enabling complete selection of Base64UUID strings. In environments with partial support, selection stops at the `$` character.
+The alphabet supports complete text selection in popular SQL development environments:
+- Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
+- Partial support: Notepad++, VS Code, SQL Server Management Studio — $ character breaks word selection.
 
 ## 5. Security Considerations
 
