@@ -13,26 +13,27 @@ Base64UUID provides a text encoding for UUIDs that preserves their natural sort 
 ### 2.1. Alphabet
 
 The 64-character alphabet SHALL be:
-`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$`
+`$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
-     0 0           16 G           32 W           48 m
-     1 1           17 H           33 X           49 n
-     2 2           18 I           34 Y           50 o
-     3 3           19 J           35 Z           51 p
-     4 4           20 K           36 a           52 q
-     5 5           21 L           37 b           53 r
-     6 6           22 M           38 c           54 s
-     7 7           23 N           39 d           55 t
-     8 8           24 O           40 e           56 u
-     9 9           25 P           41 f           57 v
-    10 A           26 Q           42 g           58 w
-    11 B           27 R           43 h           59 x
-    12 C           28 S           44 i           60 y
-    13 D           29 T           45 j           61 z
-    14 E           30 U           46 k           62 _
-    15 F           31 V           47 l           63 $
+     0 $           16 G           32 W           48 k
+     1 0           17 H           33 X           49 l
+     2 1           18 I           34 Y           50 m
+     3 2           19 J           35 Z           51 n
+     4 3           20 K           36 _           52 o
+     5 4           21 L           37 a           53 p
+     6 5           22 M           38 b           54 q
+     7 6           23 N           39 c           55 r
+     8 7           24 O           40 d           56 s
+     9 8           25 P           41 e           57 t
+    10 9           26 Q           42 f           58 u
+    11 A           27 R           43 g           59 v
+    12 B           28 S           44 h           60 w
+    13 C           29 T           45 i           61 x
+    14 D           30 U           46 j           62 y
+    15 E           31 V           47 k           63 z
+    16 F           32 W           48 l
 ```
 
 ### 2.2. Encoding Process
