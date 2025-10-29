@@ -82,7 +82,7 @@ The alphabet supports complete text selection in popular SQL development environ
 
 ### 4.5. Letter-Starting Guarantee
 
-All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order.
+All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
 ## 5. Security Considerations
 
