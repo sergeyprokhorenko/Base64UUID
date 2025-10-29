@@ -81,6 +81,10 @@ The alphabet supports complete text selection in popular SQL development environ
 - Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
 - Partial support (selection breaks at `$` character): Notepad++, VS Code, SQL Server Management Studio.
 
+### 4.5 Letter-Starting Guarantee
+
+All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order.
+
 ## 5. Security Considerations
 
 This encoding does not introduce additional security considerations beyond those of UUIDs themselves. Implementations should ensure proper validation of encoded strings before decoding.
