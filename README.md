@@ -40,23 +40,24 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
 ### 2.2. Encoding Process
 
 To encode a UUID:
-1. Convert the UUID to a 128-bit binary representation
-2. Right-shift the entire 128-bit value by 4 positions
-3. Set the 4 most significant bits (leftmost) to `0100` (binary) to start Base64UUID string with a letter character
-4. Encode the resulting 132-bit value using Base64UUID encoding
+1. Convert the UUID to its 128-bit binary representation
+2. Right-shift the entire 128-bit value by 4 bit positions
+3. Set the 4 most significant bits to `0100` (binary) to ensure the encoded string starts with a letter
+4. Encode the resulting 132-bit value as a 22-character Base64UUID string
 
 ### 2.3. Decoding Process
 
 To decode a Base64UUID string:
-1. Decode the Base64UUID string to a 132-bit value
-2. Left-shift the 128 bits starting from 5th position by 4 positions
-3. Reconstruct the original UUID from the leftmost 128-bits value
+1. Decode the 22-character Base64UUID string to obtain a 132-bit value
+2. Left-shift the rightmost 128 bits by 4 positions
+3. Reconstruct the original UUID from the leftmost 128-bit value
 
 ## 3. Encoding Examples
 
 | UUID                                      | Base64UUID Encoding       |
 | ----------------------------------------- | ------------------------- |
 | 00000000-0000-0000-0000-000000000000     | A$$$$$$$$$$$$$$$$$$$$$    |
+| 01927d1f-9b7e-7890-be8f-1a2b3c4d5e6f     | A4Yp7zmVzyOPj5DaWkxL9Ntv  |
 | ffffffff-ffff-ffff-ffff-ffffffffffff      | Izzzzzzzzzzzzzzzzzzzzz    |
 
 ## 4. Properties
@@ -79,7 +80,7 @@ The alphabet supports complete text selection in popular SQL development environ
 - Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
 - Partial support (selection breaks at `$` character): Notepad++, VS Code, SQL Server Management Studio.
 
-### 4.5 Letter-Starting Guarantee
+### 4.5. Letter-Starting Guarantee
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order.
 
