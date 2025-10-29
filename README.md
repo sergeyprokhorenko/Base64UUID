@@ -94,5 +94,3 @@ This encoding does not introduce additional security considerations beyond those
 - [RFC4648](https://datatracker.ietf.org/doc/rfc4648/) The Base16, Base32, and Base64 Data Encodings
 
 
-
-The alphabet was chosen and the original text was composed by Sergey Prokhorenko.
