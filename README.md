@@ -57,7 +57,7 @@ To decode a Base64UUID string:
 | UUID                                      | Base64UUID Encoding       |
 | ----------------------------------------- | ------------------------- |
 | 00000000-0000-0000-0000-000000000000     | A$$$$$$$$$$$$$$$$$$$$$    |
-| 01927d1f-9b7e-7890-be8f-1a2b3c4d5e6f     | A4Yp7zmVzyOPj5DaWkxL9Ntv  |
+| 019535d9-3df7-79fb-b466-fa907fa17f9e     | F$5KCSZxxrbvh5QuZ6yWUt  |
 | ffffffff-ffff-ffff-ffff-ffffffffffff      | Izzzzzzzzzzzzzzzzzzzzz    |
 
 ## 4. Properties
