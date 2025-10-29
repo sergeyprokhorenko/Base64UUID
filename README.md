@@ -40,22 +40,17 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
 ### 2.2. Encoding Process
 
 To encode a UUID:
-1. Interpret the UUID as a 128-bit big-endian integer
-2. Process the bits from most significant to least significant
-3. Group the bits into 21 groups of 6 bits and 1 final group of 2 bits
-4. Encode each 6-bit group using the alphabet above
-5. For the final 2-bit group:
-   - Pad with 4 zero bits to form a complete 6-bit value
-   - Encode using the alphabet
-   - This results in exactly 22 characters
+1. Convert the UUID to a 128-bit binary representation
+2. Right-shift the entire 128-bit value by 4 positions
+3. Set the 4 most significant bits (leftmost) to `0100` (binary) to start Base64UUID string with a letter character
+4. Encode the resulting 132-bit value using Base64UUID encoding
 
 ### 2.3. Decoding Process
 
 To decode a Base64UUID string:
-1. Verify the string is exactly 22 characters long
-2. Decode each character using the alphabet to 6-bit values
-3. For the final character, take only the 2 most significant bits
-4. Concatenate all bits to reconstruct the 128-bit UUID
+1. Decode the Base64UUID string to a 132-bit value
+2. Left-shift the 128 bits starting from 5th position by 4 positions
+3. Reconstruct the original UUID from the leftmost 128-bits value
 
 ## 3. Encoding Examples
 
