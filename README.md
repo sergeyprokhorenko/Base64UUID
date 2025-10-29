@@ -56,10 +56,8 @@ To decode a Base64UUID string:
 
 | UUID                                      | Base64UUID Encoding       |
 | ----------------------------------------- | ------------------------- |
-| 00000000-0000-0000-0000-000000000000     | $$$$$$$$$$$$$$$$$$$$$$    |
-| ffffffff-ffff-ffff-ffff-ffffffffffff      | zzzzzzzzzzzzzzzzzzzzzk    |
-
-Note: The final character encodes the last 2 bits of the UUID (padded with 4 zeros).
+| 00000000-0000-0000-0000-000000000000     | A$$$$$$$$$$$$$$$$$$$$$    |
+| ffffffff-ffff-ffff-ffff-ffffffffffff      | Izzzzzzzzzzzzzzzzzzzzz    |
 
 ## 4. Properties
 
