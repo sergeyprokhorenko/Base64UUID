@@ -4,7 +4,7 @@
 
 This specification defines the Base64UUID encoding, a compact, sortable, and URL-safe text representation of UUIDs using a 64-character ASCII alphabet. The encoding is designed specifically for UUID representation rather than general-purpose data encoding.
 
-Base64UUID encoding is recommended for general use, while the standard 36-character hexadecimal format should be used when compatibility is required, and base32hex encoding is recommended for dictation or manual entry of UUIDs.
+Base64UUID encoding is recommended for general use, while the standard 36-character hexadecimal format should be used when compatibility is required, and base32hex encoding is recommended for dictation of UUIDs.
 
 ## 1. Introduction
 
@@ -95,8 +95,6 @@ This encoding does not introduce additional security considerations beyond those
 - [RFC9562](https://datatracker.ietf.org/doc/html/rfc9562) Universally Unique IDentifiers (UUIDs)
 - [RFC4648](https://datatracker.ietf.org/doc/rfc4648/) The Base16, Base32, and Base64 Data Encodings
 
-## 7. Acknowledgements
 
-The idea for this encoding belongs to Jelte Fennema-Nio, who proposed it for UUID under the name "base64urlhex".
 
 The alphabet was chosen and the original text was composed by Sergey Prokhorenko.
