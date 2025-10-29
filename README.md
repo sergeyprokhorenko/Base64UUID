@@ -17,6 +17,7 @@ Base64UUID provides a text encoding for UUIDs that preserves their natural sort 
 The 64-character alphabet SHALL be:
 `$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
+The mapping between 6-bit values and characters is as follows:
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
      0 $           16 F           32 V           48 k
@@ -39,18 +40,17 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
 
 ### 2.2. Encoding Process
 
-To encode a UUID:
-1. Convert the UUID to its 128-bit binary representation
+To encode a UUID from its canonical format into a Base64UUID string:
+1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation
 2. Right-shift the entire 128-bit value by 4 bit positions
 3. Set the 4 most significant bits to `0100` (binary) to ensure the encoded string starts with a letter
 4. Encode the resulting 132-bit value as a 22-character Base64UUID string
 
 ### 2.3. Decoding Process
 
-To decode a Base64UUID string:
+To decode a Base64UUID string back to its canonical UUID format:
 1. Decode the 22-character Base64UUID string to obtain a 132-bit value
-2. Left-shift the rightmost 128 bits by 4 positions
-3. Reconstruct the original UUID from the leftmost 128-bit value
+2. Convert the rightmost 128-bit value back into the standard 36-character hexadecimal format of UUID.
 
 ## 3. Encoding Examples
 
