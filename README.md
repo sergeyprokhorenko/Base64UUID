@@ -4,7 +4,7 @@
 
 This specification defines the Base64UUID encoding, a compact, sortable, and URL-safe text representation of UUIDs using a 64-character ASCII alphabet. The encoding is designed specifically for UUID representation rather than general-purpose data encoding.
 
-Base64UUID encoding is recommended for general use, while the standard 36-character hexadecimal format should be used when compatibility is required, and base32hex encoding is preferable for dictation or manual entry of UUIDs.
+Base64UUID encoding is recommended for general use, while the standard 36-character hexadecimal format should be used when compatibility is required, and base32hex encoding is recommended for dictation or manual entry of UUIDs.
 
 ## 1. Introduction
 
