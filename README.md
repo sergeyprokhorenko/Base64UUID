@@ -70,7 +70,7 @@ To decode a Base64UUID string back to its canonical UUID format:
 
 ## 5. Properties
 
-### 5.1. Sort Preservation
+### 5.1. Sorts the Same as Binary
 
 The encoding preserves the numerical order of UUIDs when compared lexicographically as strings due to the monotonic mapping between bit values and character codes.
 
@@ -82,14 +82,14 @@ All characters in the alphabet are permitted in URL paths and query parameters w
 
 The encoding is compatible with major file systems including Windows, Linux, Android, and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
 
-### 5.4. Text Selection
+### 5.4. Double Click to Copy
 
 The alphabet supports complete text selection in modern development environments and database tools.
 
 *   **Full Support:** Available in most current versions of dedicated SQL clients and cloud query consoles.
 *   **Partial Support:** In some text editors and environments text selection may break at the `$` character.
 
-### 5.5. Letter-Starting Guarantee
+### 5.5. Start with a Letter
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
