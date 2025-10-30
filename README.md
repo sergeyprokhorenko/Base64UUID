@@ -38,7 +38,7 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
     15 E           31 U           47 j           63 z
 ```
 
-Base64UUID strings are enclosed in double quotes (U+0022) when necessary.
+Base64UUID strings MAY be enclosed in double quotes (U+0022) when necessary. Decoders SHALL accept both quoted and unquoted forms.
 
 ### 2.2. Encoding Process
 
