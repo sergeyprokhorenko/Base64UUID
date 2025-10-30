@@ -88,6 +88,16 @@ The alphabet supports complete text selection in popular SQL development environ
 - Full support: DBeaver (24.1+), DataGrip (2024.1+), Azure Data Studio (1.48+), Google BigQuery Console, Snowflake Web Interface.
 - Partial support (selection breaks at `$` character): Notepad++, VS Code, SQL Server Management Studio.
 
+
+Of course. Here is the transformed section in English, with no mention of specific software.
+
+### 5.4. Text Selection
+
+The alphabet supports complete text selection in modern development environments and database tools.
+
+*   **Full Support:** Available in most current versions of dedicated SQL clients and cloud query consoles.
+*   **Partial Support:** In some text editors and environments text selection may break at the `$` character.
+
 ### 5.5. Letter-Starting Guarantee
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
