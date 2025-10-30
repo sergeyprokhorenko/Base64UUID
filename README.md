@@ -14,7 +14,7 @@ Base64UUID provides a text encoding for UUIDs that preserves their natural sort 
 
 ### 2.1. Alphabet
 
-The 64-character alphabet SHALL be:
+The 64-character alphabet MUST be:
 `$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
 The mapping between 6-bit values and characters is as follows:
@@ -38,12 +38,12 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
     15 E           31 U           47 j           63 z
 ```
 
-Base64UUID strings MAY be enclosed in double quotes (U+0022) when necessary. Decoders SHALL accept both quoted and unquoted forms.
+Base64UUID strings MAY be enclosed in double quotes (U+0022) when necessary. Decoders MUST accept both quoted and unquoted forms of Base64UUID strings and remove the quotes before processing the Base64UUID value.
 
 ### 2.2. Encoding Process
 
 To encode a UUID from its canonical format into a Base64UUID string:
-1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation
+1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation. If convertion is not possible in a SQL query, the encoder MUST return NULL. UUID validation is RECOMMENDED
 2. Right-shift the entire 128-bit value by 4 bit positions
 3. Set the 4 most significant bits to `0100` (binary) to ensure the encoded string starts with a letter
 4. Encode the resulting 132-bit value as a 22-character Base64UUID string
@@ -51,8 +51,8 @@ To encode a UUID from its canonical format into a Base64UUID string:
 ### 2.3. Decoding Process
 
 To decode a Base64UUID string back to its canonical UUID format:
-1. Decode the 22-character Base64UUID string to obtain a 132-bit value
-2. Convert the rightmost 128-bit value back into the standard 36-character hexadecimal format of UUID.
+1. Decode the 22-character Base64UUID string to obtain a 132-bit value. If decoding is not possible in a SQL query, the decoder MUST return NULL. Base64UUID string validation is RECOMMENDED
+2. Convert the rightmost 128-bit value back into the standard 36-character hexadecimal format of UUID
 
 ## 3. Encoding Examples
 
