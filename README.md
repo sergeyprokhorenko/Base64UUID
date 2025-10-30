@@ -21,7 +21,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 The 64-character alphabet MUST be:
 `$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
-The mapping between 6-bit values and characters is as follows:
+Implementations MUST use the following mapping between 6-bit values and characters for Base64UUID encoding:
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
      0 $           16 F           32 V           48 k
