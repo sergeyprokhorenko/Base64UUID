@@ -18,6 +18,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### 3.1. Alphabet
 
+The Base64UUID encoding has a custom character set that is distinct from both Base64 (RFC 4648 Section 4) and Base64url (RFC 4648 Section 5).
+
 The 64-character alphabet MUST be:
 `$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
