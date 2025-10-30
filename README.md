@@ -94,7 +94,7 @@ All encoded strings start with letters. This is achieved by right-shifting the 1
 
 ## 6. Security Considerations
 
-This encoding does not introduce additional security considerations beyond those of UUIDs themselves. Implementations should ensure proper validation of encoded strings before decoding.
+This encoding does not introduce additional security considerations beyond those of UUIDs themselves.
 
 ## 7. References
 
