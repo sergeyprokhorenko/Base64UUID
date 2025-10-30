@@ -91,7 +91,7 @@ The alphabet supports complete text selection in modern development environments
 
 ### 5.5. Starts with a Letter
 
-All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
+All encoded strings MAY start with letters. This is achieved by use of letter-prefix `A`. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
 ## 6. Security Considerations
 
