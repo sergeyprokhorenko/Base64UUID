@@ -37,6 +37,7 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
     14 D           30 T           46 i           62 y
     15 E           31 U           47 j           63 z
 ```
+If necessary, the Base64UUID string is enclosed in double quotes.
 
 ### 2.2. Encoding Process
 
