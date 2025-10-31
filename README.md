@@ -79,7 +79,7 @@ All characters in the alphabet are permitted in URL paths and query parameters w
 
 ### 5.3. File System Compatibility
 
-The encoding is compatible with major file systems including Windows, Linux, Android, and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
+The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
 
 ### 5.4. Double Click to Copy
 
