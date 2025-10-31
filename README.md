@@ -23,7 +23,7 @@ The Base64UUID encoding has a custom character set that is distinct from both Ba
 The 64-character alphabet MUST be:
 `$0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`
 
-Implementations MUST use the following mapping between 6-bit values and characters for Base64UUID encoding:
+Implementations MUST use the following mapping between 6-bit decimal values and characters for Base64UUID encoding:
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
      0 $           16 F           32 V           48 k
