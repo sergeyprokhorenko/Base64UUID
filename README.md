@@ -64,7 +64,7 @@ To decode a Base64UUID string back to its canonical UUID format:
 
 | UUID                                      | Base64UUID Encoding       |
 | ----------------------------------------- | ------------------------- |
-| 00000000-0000-0000-0000-000000000000     | A$$$$$$$$$$$$$$$$$$$$$    |
+| 00000000-0000-0000-0000-000000000000     | F$$$$$$$$$$$$$$$$$$$$$    |
 | ffffffff-ffff-ffff-ffff-ffffffffffff      | Izzzzzzzzzzzzzzzzzzzzz    |
 
 ## 5. Properties
