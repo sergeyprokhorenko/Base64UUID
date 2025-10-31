@@ -58,7 +58,7 @@ To encode a UUID from its canonical format into a Base64UUID string:
 
 To decode a Base64UUID string back to its canonical UUID format:
 1. Decode the 22-character Base64UUID string to obtain a 132-bit value. Base64UUID string validation is RECOMMENDED. In a SQL query if decoding is not possible or validation is unsuccessful, the decoder MUST return NULL
-2. Convert the rightmost 128-bit value back into the standard 36-character hexadecimal format of UUID
+2. Convert the 128 least significant bits back into the standard 36-character hexadecimal format of UUID
 
 ## 4. Encoding Examples
 
