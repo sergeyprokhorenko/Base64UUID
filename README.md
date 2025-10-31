@@ -16,11 +16,11 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 Only three encodings are applicable for UUID:
 1. Base64UUID encoding is REQUIRED for general use.
-2. Base32hex encoding is REQUIRED:
+2. Base32hex encoding or the standard 36-character hexadecimal format is REQUIRED:
    * For case-insensitive use.
    * For use with a limited set of characters.
    * For typing, writing, or dictation of UUIDs.
-4. The standard 36-character hexadecimal format is REQUIRED if neither Base64UUID nor Base32hex encoding is feasible.
+   * For compatibility.
 
 ## 4. The Base64UUID Encoding
 
