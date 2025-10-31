@@ -4,8 +4,6 @@
 
 This specification defines the Base64UUID encoding, a compact, sortable, and URL-safe case-sensitive text representation of UUIDs using a 64-character ASCII alphabet. The encoding is designed specifically for UUID representation rather than general-purpose data encoding.
 
-Base64UUID encoding is REQUIRED for general use, while the standard 36-character hexadecimal format MUST be used when compatibility is required. Base32hex encoding is RECOMMENDED for typing, writing, or dictation of UUIDs. Base32hex encoding is REQUIRED for use of UUIDs in DNS records.﻿
-
 ## 1. Introduction
 
 Base64UUID provides a text encoding for UUIDs that preserves their natural sort order while maintaining compatibility with URLs, file systems, and text selection interfaces.
@@ -14,9 +12,13 @@ Base64UUID provides a text encoding for UUIDs that preserves their natural sort 
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) when, and only when, they appear in all capitals, as shown here.
 
-## 3. The Base64UUID Encoding
+## 3. Choice of Encoding for UUID
 
-### 3.1. The Base64UUID Alphabet
+Base64UUID encoding is REQUIRED for general use, while the standard 36-character hexadecimal format MUST be used when compatibility is required. Base32hex encoding is RECOMMENDED for typing, writing, or dictation of UUIDs. Base32hex encoding is REQUIRED for use in DNS records.﻿ Other encodings MUST NOT be used.
+
+## 4. The Base64UUID Encoding
+
+### 4.1. The Base64UUID Alphabet
 
 The Base64UUID encoding has a character set that is distinct from both Base64 (RFC 4648 Section 4) and Base64url (RFC 4648 Section 5).
 
@@ -46,7 +48,7 @@ Value Encoding  Value Encoding  Value Encoding  Value Encoding
 
 Base64UUID strings MAY be enclosed in double quotes (U+0022) when necessary. Decoders MUST accept both quoted and unquoted forms of Base64UUID strings and remove the quotes before processing the Base64UUID value.
 
-### 3.2. Encoding Process
+### 4.2. Encoding Process
 
 To encode a UUID from its canonical format into a Base64UUID string:
 1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation. It is RECOMMENDED to validate UUIDs unless they are originally in 128-bit binary format. In a SQL query if convertion is not possible or validation is unsuccessful, the encoder MUST return NULL
@@ -54,49 +56,49 @@ To encode a UUID from its canonical format into a Base64UUID string:
 3. Set the 4 most significant bits to `0100` (binary) to ensure the encoded string starts with a letter
 4. Encode the resulting 132-bit value as a 22-character Base64UUID string
 
-### 3.3. Decoding Process
+### 4.3. Decoding Process
 
 To decode a Base64UUID string back to its canonical UUID format:
 1. Decode the 22-character Base64UUID string to obtain a 132-bit value. Base64UUID string validation is RECOMMENDED. In a SQL query if decoding is not possible or validation is unsuccessful, the decoder MUST return NULL
 2. Convert the 128 least significant bits back into the standard 36-character hexadecimal format of UUID
 
-## 4. Encoding Examples
+## 5. Base64UUID Encoding Examples
 
 | UUID                                      | Base64UUID Encoding       |
 | ----------------------------------------- | ------------------------- |
 | 00000000-0000-0000-0000-000000000000     | F$$$$$$$$$$$$$$$$$$$$$    |
 | ffffffff-ffff-ffff-ffff-ffffffffffff      | Izzzzzzzzzzzzzzzzzzzzz    |
 
-## 5. Properties
+## 6. Base64UUID Encoding Properties
 
-### 5.1. Sorts the Same as Binary
+### 6.1. Sorts the Same as Binary
 
 The encoding preserves the numerical order of UUIDs when compared lexicographically as strings due to the monotonic mapping between bit values and character codes.
 
-### 5.2. URL Safety
+### 6.2. URL Safety
 
 All characters in the alphabet are permitted in URL paths and query parameters without percent-encoding, satisfying URL-safe requirements.
 
-### 5.3. File System Compatibility
+### 6.3. File System Compatibility
 
 The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
 
-### 5.4. Double Click to Copy
+### 6.4. Double Click to Copy
 
 The alphabet supports complete text selection in modern development environments and database tools.
 
 *   **Full Support:** Available in most current versions of dedicated SQL clients and cloud query consoles.
 *   **Partial Support:** In some text editors and environments text selection may break at the `$` character.
 
-### 5.5. Starts with a Letter
+### 6.5. Starts with a Letter
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
-## 6. Security Considerations
+## 7. Security Considerations
 
-This encoding does not introduce additional security considerations beyond those of UUIDs themselves.
+Base64UUID encoding does not introduce additional security considerations beyond those of UUIDs themselves.
 
-## 7. References
+## 8. References
 
 - [RFC9562](https://datatracker.ietf.org/doc/html/rfc9562) Universally Unique IDentifiers (UUIDs)
 - [RFC4648](https://datatracker.ietf.org/doc/rfc4648/) The Base16, Base32, and Base64 Data Encodings
