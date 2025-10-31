@@ -14,7 +14,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## 3. Choice of Encoding for UUID
 
-Base64UUID encoding is REQUIRED for general use, while the standard 36-character hexadecimal format MUST be used when compatibility is required. Base32hex encoding is RECOMMENDED for typing, writing, or dictation of UUIDs. Base32hex encoding is REQUIRED for use in DNS records.﻿ Other encodings MUST NOT be used.
+Base64UUID encoding is REQUIRED for general use, while the standard 36-character hexadecimal format MUST be used when compatibility is required. Base32hex encoding is RECOMMENDED for typing, writing, or dictation of UUIDs. Base32hex encoding is REQUIRED for use in the DNS records.﻿ Other encodings MUST NOT be used.
 
 ## 4. The Base64UUID Encoding
 
@@ -51,7 +51,7 @@ Base64UUID strings MAY be enclosed in double quotes (U+0022) when necessary. Dec
 ### 4.2. Encoding Process
 
 To encode a UUID from its canonical format into a Base64UUID string:
-1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation. It is RECOMMENDED to validate UUIDs unless they are originally in 128-bit binary format. In a SQL query if convertion is not possible or validation is unsuccessful, the encoder MUST return NULL
+1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation. It is RECOMMENDED to validate UUIDs unless they are originally in 128-bit binary format. In a SQL query, if conversion is not possible or validation is unsuccessful, the encoder MUST return NULL
 2. Right-shift the entire 128-bit value by 4 bit positions
 3. Set the 4 most significant bits to `0100` (binary) to ensure the encoded string starts with a letter
 4. Encode the resulting 132-bit value as a 22-character Base64UUID string
