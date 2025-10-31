@@ -1,4 +1,4 @@
-# Base64UUID: A Compact and Sortable UUID Encoding
+# The Base64UUID Encoding
 
 ## Abstract
 
