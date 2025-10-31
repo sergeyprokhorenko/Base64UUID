@@ -1,4 +1,4 @@
-# The Base64UUID Encoding
+# The Base64UUID Encoding and Choice of Encoding for UUID
 
 ## Abstract
 
