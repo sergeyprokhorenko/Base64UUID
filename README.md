@@ -79,6 +79,8 @@ The encoding preserves the numerical order of UUIDs when compared lexicographica
 
 All characters in the alphabet are permitted in URL paths and query parameters without percent-encoding, satisfying URL-safe requirements.
 
+The '$' character within Base64UUID strings MUST be permitted without percent-encoding by URL parsing and generation systems.
+
 ### 6.3. File System Compatibility
 
 The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
