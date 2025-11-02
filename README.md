@@ -77,9 +77,7 @@ The encoding preserves the numerical order of UUIDs when compared lexicographica
 
 ### 6.2. URL Safety
 
-All characters in the alphabet are permitted in URL paths and query parameters without percent-encoding, satisfying URL-safe requirements.
-
-The `$` character within Base64UUID strings MUST be permitted without percent-encoding by URL parsing and generation systems.
+The `$` character in Base64UUID strings MUST be permitted without percent-encoding by URL parsing and generation systems. This ensures Base64UUID encoding meets URL safety requirements.
 
 ### 6.3. File System Compatibility
 
