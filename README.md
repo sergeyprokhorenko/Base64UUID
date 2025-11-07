@@ -71,30 +71,41 @@ To decode a Base64UUID string back to its standard 36-character hexadecimal form
 
 ## 6. Base64UUID Encoding Properties
 
-### 6.1. Sorts the Same as Binary
+### 6.1. Compact String Length
+
+The Base64UUID encoding produces a compact string of only 22 characters, significantly shorter than other common UUID representations. This compactness is achieved by using a full 64-character alphabet.
+
+| Alphabet Size | String Length for 128-bit UUID |
+| :--- | :--- |
+| 16 | 32 hex digits + 4 hyphens = 36 total |
+| 32 | 26 |
+| 36 | 25 |
+| 64 | 22 |
+
+### 6.2. Sorts the Same as Binary
 
 The encoding preserves the numerical order of UUIDs when compared lexicographically as strings due to the monotonic mapping between bit values and character codes.
 
-### 6.2. URL Safety
+### 6.3. URL Safety
 
 Relevant systems for parsing and generating URLs MUST permit the `$` character in Base64UUID strings without percent-encoding. This ensures Base64UUID encoding meets URL safety requirements.
 
-### 6.3. File System Compatibility
+### 6.4. File System Compatibility
 
 The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
 
-### 6.4. Double Click to Copy
+### 6.5. Double Click to Copy
 
 The alphabet supports complete text selection in modern development environments and database tools.
 
 *   **Full Support:** Available in most current versions of dedicated SQL clients and cloud query consoles.
 *   **Partial Support:** In some text editors and environments text selection may break at the `$` character.
 
-### 6.5. Starts with a Letter
+### 6.6. Starts with a Letter
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
-### 6.6. Computational Efficiency
+### 6.7. Computational Efficiency
 
 Base64UUID is significantly more performant for encoding and decoding than encodings with non-power-of-two alphabet sizes (36, 48, 52, 58, or 62). It operates on the UUID's 128-bit raw binary data using simple bitwise transformations to a base64 representation. In contrast, non-power-of-two encodings interpret the entire UUID as a large integer and require computationally expensive iterative big-integer division and modulus operations.
 
