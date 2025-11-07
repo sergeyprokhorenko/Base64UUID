@@ -14,7 +14,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## 3. Choice of Encoding for UUID
 
-The Base64UUID encoding MUST be used, if possible. Otherwise, the standard 36-character hexadecimal format is RECOMMENDED due to its wide compatibility.
+The Base64UUID encoding MUST be used, if possible. Otherwise, the standard 36-character hexadecimal format is RECOMMENDED due to its wide compatibility and ease of dictation.
 
 ## 4. The Base64UUID Encoding
 
