@@ -96,7 +96,7 @@ All encoded strings start with letters. This is achieved by right-shifting the 1
 
 ### 6.6. Computational Efficiency
 
-Base64UUID is significantly more performant for encoding and decoding than encodings using non-power-of-two alphabet sizes (36, 48, 52, 58, or 62). It operates directly on the UUID's 128-bit raw binary data, requiring only a single base64 transformation. In contrast, encodings using non-power-of-two alphabet sizes require computationally expensive big-integer division and modulus operations on the entire 128-bit value, which is inherently slower for base conversion.
+Base64UUID is significantly more performant for encoding and decoding than encodings with non-power-of-two alphabet sizes (36, 48, 52, 58, or 62). It operates on the UUID's 128-bit raw binary data using simple bitwise transformations to a base64 representation. In contrast, non-power-of-two encodings interpret the entire UUID as a large integer and require computationally expensive iterative big-integer division and modulus operations.
 
 ## 7. Security Considerations
 
