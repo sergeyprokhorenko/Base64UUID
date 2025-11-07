@@ -73,7 +73,7 @@ To decode a Base64UUID string back to its standard 36-character hexadecimal form
 
 ### 6.1. Compact String Length
 
-The Base64UUID encoding produces a compact string of only 22 characters, significantly shorter than other common UUID representations. This compactness is achieved by using a full 64-character alphabet.
+The Base64UUID encoding produces a compact string of only 22 characters, significantly shorter than other common UUID representations. This compactness is achieved by using a 64-character alphabet.
 
 | Alphabet Size | String Length for 128-bit UUID |
 | :--- | :--- |
