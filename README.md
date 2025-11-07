@@ -94,6 +94,10 @@ The alphabet supports complete text selection in modern development environments
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
+### 6.6. Computational Efficiency
+
+Base64UUID is significantly more performant for encoding and decoding than encodings using non-power-of-two alphabet sizes (36, 48, 52, 58, or 62). It operates directly on the UUID's 128-bit raw binary data, requiring only a single base64 transformation. In contrast, encodings using non-power-of-two alphabet sizes require computationally expensive big-integer division and modulus operations on the entire 128-bit value, which is inherently slower for base conversion.
+
 ## 7. Security Considerations
 
 Base64UUID encoding does not introduce additional security considerations beyond those of UUIDs themselves.
