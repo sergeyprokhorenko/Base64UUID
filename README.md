@@ -28,7 +28,7 @@ The 64-character alphabet MUST be:
 Implementations MUST use the following mapping between 6-bit decimal values and characters for Base64UUID encoding:
 ```
 Value Encoding  Value Encoding  Value Encoding  Value Encoding
-     0 $           16 F           32 V           48 k
+     0 $ (-)       16 F           32 V           48 k
      1 0           17 G           33 W           49 l
      2 1           18 H           34 X           50 m
      3 2           19 I           35 Y           51 n
