@@ -88,11 +88,11 @@ The encoding preserves the numerical order of UUIDs when compared lexicographica
 
 ### 6.3. URL Safety
 
-When system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, the $ character MUST be replaced with a hyphen (U+002D, `-`) in URLs. Implementations MUST explicitly declare which approach they support.
+When system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, the $ character MUST be replaced with a hyphen-minus (U+002D, `-`) in URLs. Implementations MUST explicitly declare which approach they support.
 
 ### 6.4. XML Safety
 
-The $ character MUST be replaced with a hyphen (U+002D, `-`) in XML.
+The $ character MUST be replaced with a hyphen-minus (U+002D, `-`) in XML.
 
 ### 6.5. File System Compatibility
 
