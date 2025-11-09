@@ -86,9 +86,10 @@ The Base64UUID encoding produces a compact string of only 22 characters, signifi
 
 The encoding preserves the numerical order of UUIDs when compared lexicographically as strings due to the monotonic mapping between bit values and character codes.
 
-### 6.3. URL Safety
+### 6.3. URL and XML Safety
 
 When system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, the $ character MUST be replaced with a hyphen (U+002D, `-`) in URLs. Implementations MUST explicitly declare which approach they support.
+The $ character MUST be replaced with a hyphen (U+002D, `-`) in XML.
 
 ### 6.4. File System Compatibility
 
