@@ -86,27 +86,30 @@ The Base64UUID encoding produces a compact string of only 22 characters, signifi
 
 The encoding preserves the numerical order of UUIDs when compared lexicographically as strings due to the monotonic mapping between bit values and character codes.
 
-### 6.3. URL and XML Safety
+### 6.3. URL Safety
 
 When system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, the $ character MUST be replaced with a hyphen (U+002D, `-`) in URLs. Implementations MUST explicitly declare which approach they support.
+
+### 6.4. XML Safety
+
 The $ character MUST be replaced with a hyphen (U+002D, `-`) in XML.
 
-### 6.4. File System Compatibility
+### 6.5. File System Compatibility
 
 The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
 
-### 6.5. Double Click to Copy
+### 6.6. Double Click to Copy
 
 The alphabet supports complete text selection in modern development environments and database tools.
 
 *   **Full Support:** Available in most current versions of dedicated SQL clients and cloud query consoles.
 *   **Partial Support:** In some text editors and environments text selection may break at the `$` character.
 
-### 6.6. Starts with a Letter
+### 6.7. Starts with a Letter
 
 All encoded strings start with letters. This is achieved by right-shifting the 128-bit UUID by 4 bits and prefixing `0100` bits before Base64 encoding. The transformation is reversible and preserves lexical sort order of the original UUIDs.
 
-### 6.7. Computational Efficiency
+### 6.8. Computational Efficiency
 
 Base64UUID is significantly more performant for encoding and decoding than encodings with non-power-of-two alphabet sizes (36, 48, 52, 58, or 62). It operates on the UUID's 128-bit raw binary data using simple bitwise transformations to a base64 representation. In contrast, non-power-of-two encodings interpret the entire UUID as a large integer and require computationally expensive iterative big-integer division and modulus operations.
 
