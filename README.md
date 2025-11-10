@@ -93,6 +93,7 @@ If system configuration permits, Base64UUID strings in URLs MAY retain the `$` c
 ### 6.4. XML Safety
 
 The `$` character MAY be used directly, without escaping, within XML element content and attribute values.
+
 The `$` character MUST be replaced with a hyphen-minus (U+002D, `-`) in XML element names, attribute names, or any context requiring an NCName (such as namespace prefixes).
 
 ### 6.5. File System Compatibility
