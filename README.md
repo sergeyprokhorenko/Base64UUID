@@ -89,7 +89,7 @@ The encoding preserves the numerical order of UUIDs when compared lexicographica
 
 ### 6.3. URL Safety
 
-If system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, percent-encoding (`%24`) is REQUIRED. Implementations MUST explicitly declare which approach they support.
+If system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, percent-encoding (`%24`) is REQUIRED according to [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986). Implementations MUST explicitly declare which approach they support.
 
 ### 6.4. XML Safety
 
@@ -99,7 +99,9 @@ The `$` character in Base64UUID strings is prohibited in XML element names, attr
 
 ### 6.5. File System Compatibility
 
-The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`б, `#`, `%`, `&`, `{`, `}`, `+`, `=`).
+The encoding is generally compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`б, `#`, `%`, `&`, `{`, `}`, `+`, `=`).
+
+Consider testing use of `$` character in file names in your specific environment.
 
 ### 6.6. Double Click to Copy
 
