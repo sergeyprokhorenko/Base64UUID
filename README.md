@@ -89,7 +89,7 @@ The encoding preserves the numerical order of UUIDs when compared lexicographica
 
 ### 6.3. URL Safety
 
-If system configuration permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, percent-encoding (`%24`) is REQUIRED according to [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986). Implementations MUST explicitly declare which approach they support.
+If URL syntax permits, Base64UUID strings in URLs MAY retain the `$` character without percent-encoding. Otherwise, percent-encoding (`%24`) is REQUIRED according to [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986). Implementations MUST explicitly declare which approach they support.
 
 ### 6.4. XML Safety
 
