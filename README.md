@@ -52,7 +52,7 @@ Base64UUID strings MAY be enclosed in double quotes (U+0022, `"`) when necessary
 
 To encode the standard 36-character hexadecimal format into a Base64UUID string:
 1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary value. Validation of the UUID is RECOMMENDED unless they are originally in 128-bit binary format. In a SQL query, if conversion or validation fails, the encoder MUST return NULL.
-3. Prepend the 4-bit prefix '0100' to the entire 128-bit UUID, forming a 132-bit value. This prefix ensures the encoded string starts with a letter.
+3. Prepend the 4-bit prefix `0100` to the entire 128-bit UUID, forming a 132-bit value. This prefix ensures the encoded string starts with a letter.
 4. Split the 132-bit value into 22 groups of 6 bits.
 5. Map each 6-bit group to a character from the Base64UUID alphabet.
 6. Concatenate these characters to produce the final 22-character Base64UUID string.
