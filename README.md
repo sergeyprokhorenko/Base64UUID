@@ -92,9 +92,9 @@ If system configuration permits, Base64UUID strings in URLs MAY retain the `$` c
 
 ### 6.4. XML Safety
 
-The `$` character MAY be used unescaped in XML element content and attribute values.
+The `$` character in Base64UUID strings MAY be used unescaped in XML element content and attribute values.
 
-The `$` character is prohibited in XML element names, attribute names, and NCName contexts (e.g., namespace prefixes), where it MUST be replaced with a hyphen-minus (U+002D, `-`).
+The `$` character in Base64UUID strings is prohibited in XML element names, attribute names, and NCName contexts (e.g., namespace prefixes), where it MUST be replaced with a hyphen-minus (U+002D, `-`).
 
 ### 6.5. File System Compatibility
 
