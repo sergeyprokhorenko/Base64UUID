@@ -51,17 +51,17 @@ Base64UUID strings MAY be enclosed in double quotes (U+0022, `"`) when necessary
 ### 4.2. Encoding Process
 
 To encode the standard 36-character hexadecimal format into a Base64UUID string:
-1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary representation. It is RECOMMENDED to validate UUIDs unless they are originally in 128-bit binary format. In a SQL query, if conversion is not possible or validation is unsuccessful, the encoder MUST return NULL.
-2. Prepend the 4-bit prefix '0100' to the entire 128-bit UUID, forming a 132-bit value. This prefix will ensure the encoded string starts with a letter
-3. Divide the 132-bit value into 22 groups of 6 bits.
-4. Map each 6-bit group to a character from the Base64UUID alphabet.
-5. Concatenate the characters to form the final 22-character Base64UUID string.
+1. Convert the UUID from standard 36-character hexadecimal format to 128-bit binary value. Validation of the UUID is RECOMMENDED unless they are originally in 128-bit binary format. In a SQL query, if conversion or validation fails, the encoder MUST return NULL.
+3. Prepend the 4-bit prefix '0100' to the entire 128-bit UUID, forming a 132-bit value. This prefix ensures the encoded string starts with a letter.
+4. Split the 132-bit value into 22 groups of 6 bits.
+5. Map each 6-bit group to a character from the Base64UUID alphabet.
+6. Concatenate these characters to produce the final 22-character Base64UUID string.
 
 ### 4.3. Decoding Process
 
 To decode a Base64UUID string back to its standard 36-character hexadecimal format:
-1. Decode the 22-character Base64UUID string to obtain a 132-bit value. Base64UUID string validation is RECOMMENDED. In a SQL query, if decoding is not possible or validation is unsuccessful, the decoder MUST return NULL
-2. Convert the 128 least significant bits back into the standard 36-character hexadecimal format of UUID
+1. Decode the 22-character Base64UUID string to retrieve a 132-bit value. Base64UUID string validation is RECOMMENDED. In a SQL query, if decoding or validation fails, the decoder MUST return NULL.
+2. Convert the 128 least significant bits back into the standard 36-character hexadecimal format of UUID.
 
 ## 5. Base64UUID Encoding Examples
 
