@@ -99,7 +99,7 @@ The `$` character in Base64UUID strings is prohibited in XML element names, attr
 
 ### 6.5. File System Compatibility
 
-The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`).
+The encoding is compatible with major file systems including Windows, Linux, Android, macOS and iOS, as it excludes prohibited characters (`/`, `\`, `:`, `*`, `?`, `"`, `<`, `>`, `|`б, `#`, `%`, `&`, `{`, `}`, `+`, `=`).
 
 ### 6.6. Double Click to Copy
 
